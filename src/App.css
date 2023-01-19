@@ -20,10 +20,13 @@ body {
   color: white;
   width: 100vw;
   height: 55vh;
+  font-family: cursive;
+  font-weight: 600;
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 60%;
 }
 
 .title {
-  font-size: 2.5em;
+  font-size: 3em;
+  margin: 0.3em;
 }

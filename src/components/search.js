@@ -1,9 +1,14 @@
 import "./search.css";
 
-const search = () => {
+const search = ({ handleKeyUp }) => {
     return (
         <div className="search-wrapper">
-            <input type="search" id="search" placeholder="Search..." />
+            <input 
+                onKeyUp={() => handleKeyUp() } 
+                type="search" 
+                id="search" 
+                placeholder="Search..." 
+            />
         </div>    
         );
 }
