@@ -1,0 +1,21 @@
+.search-wrapper {
+    margin-top: 2em;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+}
+
+#search {
+    height: 3em;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    flex: 1;
+    background-color: papayawhip;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
