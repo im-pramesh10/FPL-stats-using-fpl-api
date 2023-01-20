@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* overflow: auto; */
+  overflow: scroll;
 }
 
 .header-wrapper {
@@ -20,7 +20,7 @@ body {
   background-size: cover;
   color: white;
   width: 100vw;
-  height: 55vh;
+  height: 40vh;
   font-family: cursive;
   font-weight: 600;
   border-bottom-left-radius: 100%;
@@ -30,4 +30,20 @@ body {
 .title {
   font-size: 3em;
   margin: 0.3em;
+}
+
+.rand {
+  background-color: #B00050;
+  border: 0;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  transition: background-color 500ms ease-in-out;
+}
+
+.rand:hover {
+  background-color: #E3001C;
+  cursor: pointer;
 }

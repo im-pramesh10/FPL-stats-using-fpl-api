@@ -8,18 +8,24 @@
 #search-display {
     background-color: rgba(255, 239, 213,0.8);
     color: black;
-    min-height: min-content;
-    max-height: 150px;
-    margin-bottom: 5em;
+    /* min-height: min-content; */
+    height: 80px;
+    margin-bottom: 21vh;
     width: 30vw;
     font-weight: 550;
     overflow: scroll;
     border-radius: 15px 15px 4px 4px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     position: absolute;
-    top: 38.5%;
+    /* top: 38%; */
     /* bottom: 30.3%; */
     /* bottom: 100vw/100vh; */
     z-index: 80;
+}
+.button {
+    cursor: pointer;
+}
+.button:hover {
+    color: red;
 }

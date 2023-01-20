@@ -1,6 +1,6 @@
 import "./search.css";
 
-const search = ({ handleKeyUp }) => {
+const search = ({ handleKeyUp, onBlur }) => {
     return (
         <div className="search-wrapper">
             <input 
@@ -8,6 +8,7 @@ const search = ({ handleKeyUp }) => {
                 type="search" 
                 id="search" 
                 placeholder="Search..." 
+                onBlur={onBlur}
             />
         </div>    
         );

@@ -1,6 +1,6 @@
 import "./searchDisplay.css";
 
-const searchDisplay = ({ displayvalue, players }) => {
+const searchDisplay = ({ displayvalue, players, handleClick }) => {
     // console.log(players);
     return(
         <div 
@@ -10,19 +10,17 @@ const searchDisplay = ({ displayvalue, players }) => {
             {/* { web_name_return({players}) } */}
             <>
             {players.map(player => {
-                return <div key={player.id}>{player.name}</div>
+                return( 
+                <div 
+                className="button" 
+                key={player.id.toString()} 
+                onClick={()=>handleClick(player.id) } 
+                >
+                {player.name}
+                </div>);
             })}
         </>
         </div>
     );
 }
-// const web_name_return = ({players}) => {
-//     return (
-//         <>
-//             {players.map(player => {
-//                 return <div key={player.id}>{player.name}</div>
-//             })}
-//         </>
-//     );
-// }
 export default searchDisplay;
