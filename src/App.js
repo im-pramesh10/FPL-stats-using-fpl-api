@@ -15,11 +15,23 @@ function App() {
   }
 
   const handleBlur = () => {
-    setDisplayValue("none");
+    setTimeout(()=>{
+        setDisplayValue("none")
+    },180)
   }
 
   const handleClick = (val) => {
-    console.log("val is "+val);
+    // console.log("val is "+val);
+    // console.log(players)
+    players.find((prevPlayers)=> {
+        if(prevPlayers.id === val){
+            let arr = [];
+            arr.push(prevPlayers);
+            // console.log(arr);
+            setPlayers(arr);
+            // console.log(players);
+        }
+    })
   }
 
   const addToPlayers = (player, team) => {
@@ -100,7 +112,7 @@ return (
       </div>
       
       { (players.length !== 0 ) && <SearchDisplay handleClick={ handleClick } displayvalue={ displayValue } players={ players }/>}
-      <Search handleKeyUp={ handleSearchKeyStroke } />
+      <Search handleKeyUp={ handleSearchKeyStroke }  onBlur={ handleBlur }/>
       
       { (players.length !== 0 ) && <Card player={ players[0] }/>}
        <button className='rand' onClick={ Randomize }>Randomize</button>
