@@ -1,0 +1,20 @@
+.card {
+    display: flex;
+    background: linear-gradient(50deg,red,purple);
+    min-height: 40vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 16em;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 6px;
+    color: white;
+    flex-direction: column;
+}
+.card-item {
+    flex: 1;
+}
+.row {
+    display: flex;
+    margin-top: 2px;
+}

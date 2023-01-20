@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Search from './components/search';
 import SearchDisplay from './components/searchDisplay';
+import Card from './components/card';
 
 function App() {
   let searchstr = "";
@@ -66,12 +67,16 @@ function App() {
   return (
       <div className="App">
         <div className="header-wrapper">
+          {/* <img src='https://fantasy.premierleague.com/static/media/player-comp-5-1x.84357501.png' style={{ width: "360px",height: "240px" }}></img> */}
           <h1 className="title">Welcome</h1>
           <h1 className="title">To</h1>
           <h1 className="title">FPL Statistics</h1>
         </div>
-        <Search handleKeyUp={ searchkeystroke }/>
+        
         <SearchDisplay displayvalue={ displayvalue } players={ players }/>
+        <Search handleKeyUp={ searchkeystroke }/>
+        
+        <Card/>
     </div>
   );
 }
