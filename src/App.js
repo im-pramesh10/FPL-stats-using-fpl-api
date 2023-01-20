@@ -14,14 +14,17 @@ function App() {
     fetch("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F")
     .then(response => response.json())
     .then(data => setData(data))
+    .catch(err => alert(err))
+    console.log("effect");
     
   },[])
+  console.log(data);
 
   const searchkeystroke = () => {
     setPlayers(playersArray);
     searchstr = document.getElementById('search').value;
     console.log(searchstr);
-    if(searchstr==""){
+    if(searchstr===""){
       setDV("none");
     } else {
       setDV(null);
