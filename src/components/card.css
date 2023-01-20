@@ -10,6 +10,7 @@
     padding: 6px;
     color: white;
     flex-direction: column;
+    /* align-items: center; */
 }
 .card-item {
     flex: 1;
@@ -17,4 +18,5 @@
 .row {
     display: flex;
     margin-top: 2px;
+    /* flex-direction: row; */
 }

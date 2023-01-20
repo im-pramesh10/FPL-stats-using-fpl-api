@@ -6,23 +6,63 @@ import Card from './components/card';
 
 function App() {
   let searchstr = "";
-  const playersArray = [];
-  const [players, setPlayers] = useState(playersArray);
+  const [players, setPlayers] = useState([]);
   const [data, setData] = useState(null);
   const [displayvalue, setDV] = useState(null);
+
+  const addToPlayers = (id,web_name,team,status1,expected_goals,expected_assists,expected_assists_per_90,expected_goals_per_90,goals_scored,assists,selected_by_percent) => {
+    setPlayers((prevPlayers) => [
+      ...prevPlayers,
+      {
+        id: id,
+        name: web_name,
+        team: team,
+        status: status1,
+        xG: parseFloat(expected_goals).toFixed(3),
+        xA: parseFloat(expected_assists).toFixed(3),
+        xGp90: parseFloat(expected_goals_per_90).toFixed(3),
+        xAp90: parseFloat(expected_assists_per_90).toFixed(3),
+        xGIp90: parseFloat(expected_assists_per_90+expected_goals_per_90).toFixed(3),
+        goals: goals_scored,
+        assists: assists,
+        selected_by: selected_by_percent,
+      }
+    
+    ]);
+  }
+
+  // console.log(players != playersArray);
+  // console.log(players.length);
 
   useEffect(() => {
     fetch("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F")
     .then(response => response.json())
-    .then(data => setData(data))
+    .then((data) => {
+      setData(data)
+      initialilePlayers(data)
+    })
+    // .then(()=> initialilePlayers()) 
     .catch(err => alert(err))
+     
+
     console.log("effect");
     
   },[])
+
+  function initialilePlayers(data) {
+    setDV("none");
+    if (data != null) {
+      let elem = data.elements[Math.floor(Math.random() * data.elements.length)];
+      let team = data.teams[elem.team - 1].name;
+
+      addToPlayers(elem.id, elem.web_name, team, elem.status, elem.expected_goals, elem.expected_assists, elem.expected_assists_per_90, elem.expected_goals_per_90, elem.goals_scored, elem.assists, elem.selected_by_percent);
+      console.log("pl");
+    }
+  }
   console.log(data);
 
   const searchkeystroke = () => {
-    setPlayers(playersArray);
+    setPlayers([]);
     searchstr = document.getElementById('search').value;
     console.log(searchstr);
     if(searchstr===""){
@@ -42,27 +82,6 @@ function App() {
       }
     });
   }
-
-  const addToPlayers = (id,web_name,team,status1,expected_goals,expected_assists,expected_assists_per_90,expected_goals_per_90,goals_scored,assists,selected_by_percent) => {
-    setPlayers((prevPlayers) => [
-      ...prevPlayers,
-      {
-        id: id,
-        name: web_name,
-        team: team,
-        status: status1,
-        xG: expected_goals,
-        xA: expected_assists,
-        xGp90: expected_goals_per_90,
-        xAp90: expected_assists_per_90,
-        xGIp90: expected_assists_per_90+expected_goals_per_90,
-        goals: goals_scored,
-        assists: assists,
-        selected_by: selected_by_percent,
-      }
-    
-    ]);
-  }
   
   return (
       <div className="App">
@@ -73,10 +92,10 @@ function App() {
           <h1 className="title">FPL Statistics</h1>
         </div>
         
-        <SearchDisplay displayvalue={ displayvalue } players={ players }/>
+        { (players.length !== 0 ) && <SearchDisplay displayvalue={ displayvalue } players={ players }/>}
         <Search handleKeyUp={ searchkeystroke }/>
         
-        <Card/>
+        { (players.length !== 0 ) && <Card player={ players[0] }/>}
     </div>
   );
 }
