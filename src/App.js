@@ -23,15 +23,15 @@ function App() {
   const handleClick = (val) => {
     // console.log("val is "+val);
     // console.log(players)
-    players.find((prevPlayers)=> {
+    let arr = [];
+    let player = players.find((prevPlayers)=> {
         if(prevPlayers.id === val){
-            let arr = [];
-            arr.push(prevPlayers);
-            // console.log(arr);
-            setPlayers(arr);
+           return prevPlayers;
             // console.log(players);
-        }
-    })
+        } 
+       });
+    arr.push(player);
+    setPlayers(arr);
   }
 
   const addToPlayers = (player, team) => {

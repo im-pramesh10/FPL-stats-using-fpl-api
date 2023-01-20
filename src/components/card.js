@@ -11,8 +11,8 @@ const card = ({ player })=>{
                 <div className="card-item">Team: { player.team }</div>
             </div>
             <div className="row">
-                { (player.status=="a")&&<div className="card-item">Status: <span style={{ color: "white", background: "green", padding: "2px", borderRadius: "6px" }}>Available</span></div>}
-                { (player.status!="a")&&<div className="card-item">Status: <span style={{ color: "white", background: "red", padding: "2px", borderRadius: "6px" }}>Unavailable</span></div>}
+                { (player.status==="a")&&<div className="card-item">Status: <span style={{ color: "white", background: "green", padding: "2px", borderRadius: "6px" }}>Available</span></div>}
+                { (player.status!=="a")&&<div className="card-item">Status: <span style={{ color: "white", background: "red", padding: "2px", borderRadius: "6px" }}>Unavailable</span></div>}
             </div>
             <div className="row">
                 <div className="card-item">{ player.selected_by }% Ownership</div>
