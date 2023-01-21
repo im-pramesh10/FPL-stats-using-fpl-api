@@ -11,13 +11,13 @@ const searchDisplay = ({ displayvalue, players, handleClick }) => {
             <>
             {players.map(player => {
                 return( 
-                <div 
+                <button 
                 className="button" 
                 key={player.id.toString()} 
                 onClick={()=>handleClick(player.id) } 
                 >
                 {player.name}
-                </div>);
+                </button>);
             })}
         </>
         </div>
