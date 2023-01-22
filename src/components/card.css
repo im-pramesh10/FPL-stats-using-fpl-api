@@ -1,12 +1,15 @@
 .card-container {
     /* background-color: black; */
-    height: 40vh;
+    height: 253px;
+    /* height: 45vh; */
     margin-top: 2vh;
     width: 16em;
     margin-bottom: 3vh;
     /* border: 1px solid #eeeeee; */
     padding: 6px;
     perspective: 1000px;
+
+    
   }
 .card {
     display: flex;
@@ -16,6 +19,7 @@
     font-weight: 500;
     /* border-radius: 20px; */
     padding: 5px;
+    
     color: white;
     position: relative;
     flex-direction: column;
@@ -51,14 +55,17 @@
 .card-item {
     flex: 1;
 }
-/* .row {
+.row {
     display: flex;
     margin-top: 2px;
-    /* flex-direction: row;
-} */ 
+    /* flex-direction: row;*/
+} 
 .info {
     font-family: cursive;
     font-size: 24px;
     font-weight: 600;
     color: rgba(255,255,255,0.8);
+}
+table {
+    margin: 0 auto;
 }
