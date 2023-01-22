@@ -67,6 +67,9 @@ function App() {
         player.element_type === 2 ? "DF" : 
         player.element_type === 3 ? "MD" : 
         player.element_type === 4 ? "FW" : "unknown",
+        starts: player.starts,
+        yellows: player.yellow_cards,
+        reds: player.red_cards,
       }
     ]);
   }

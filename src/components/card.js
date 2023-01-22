@@ -61,7 +61,50 @@ const card = ({ player })=>{
            
             </div>
             <div className="card-back">
-                hello
+                <div>Name: { player.name }</div>
+                <div>Position: { player.elements_type }</div>
+                <table>
+                    <thead>
+                    <tr>
+                        <td></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Total Points</td>
+                        <td>{player.total_points}</td>
+                    </tr>
+                    <tr>
+                        <td>Starts</td>
+                        <td>{player.starts}</td>
+                    </tr>
+                    <tr>
+                        <td>Minutes</td>
+                        <td>{player.minutes}</td>
+                    </tr>
+                    <tr>
+                        <td>Clean Sheets</td>
+                        <td>{player.clean_sheets}</td>
+                    </tr>
+                    <tr>
+                        <td>Goals Conceded</td>
+                        <td>{player.goals_conceded}</td>
+                    </tr>
+                    <tr>
+                        <td>Saves</td>
+                        <td>{player.saves}</td>
+                    </tr>
+                    <tr>
+                        <td>Yellows</td>
+                        <td>{player.yellows}</td>
+                    </tr>
+                    <tr>
+                        <td>Reds</td>
+                        <td>{player.reds}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         </div>
