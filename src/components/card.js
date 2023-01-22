@@ -3,7 +3,9 @@ import "./card.css"
 const card = ({ player })=>{
 
     return (
+        <div className="card-container">
         <div className="card">
+        <div className="card-front">
             <div className="row">
                 <div className="card-item">Name: { player.name }</div>
             </div>
@@ -17,7 +19,8 @@ const card = ({ player })=>{
             <div className="row">
                 <div className="card-item">{ player.selected_by }% Ownership</div>
             </div>
-            <div className="card-item"></div>
+            {/* <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div className="info">Hover for more info</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div> */}
+            {/* <div className="card"></div> */}
             <div className="row">
                 <div className="card-item">Goals: {player.goals}</div>
                 <div className="card-item">Assists: {player.assists}</div>
@@ -32,9 +35,17 @@ const card = ({ player })=>{
             </div>
             <div className="row">
                 <div className="card-item">xGIp90: {player.xGIp90}</div>
-                {/* <div className="card-item">LIV</div> */}
+                <div className="card-item">Position: {player.elements_type}</div>
+            </div>
+            <div className="info">Hover for more info</div>
+            </div>
+            <div className="card-back">
+                hello
             </div>
         </div>
+        </div>
+
+        
     );
 
 }

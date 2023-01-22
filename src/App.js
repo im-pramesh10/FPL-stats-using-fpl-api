@@ -58,6 +58,15 @@ function App() {
         goals: player.goals_scored,
         assists: player.assists,
         selected_by: player.selected_by_percent,
+        minutes: player.minutes,
+        total_points: player.total_points,
+        clean_sheets: player.clean_sheets,
+        saves: player.saves,
+        goals_conceded: player.goals_conceded,
+        elements_type: player.element_type === 1 ? "GK" : 
+        player.element_type === 2 ? "DF" : 
+        player.element_type === 3 ? "MD" : 
+        player.element_type === 4 ? "FW" : "unknown",
       }
     ]);
   }
