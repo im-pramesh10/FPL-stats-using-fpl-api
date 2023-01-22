@@ -8,10 +8,13 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [data, setData] = useState(null);
   const [displayValue, setDisplayValue] = useState("none");
-  const [random, setRandom]= useState(0);
+  const [random, setRandom]= useState(true);
+  const [animate, setAnimate]=useState(true);
+
 
   const Randomize = () => {
-    setRandom(prev => prev+1);
+    setRandom(!random);
+    setAnimate(!animate);
   }
 
   const handleBlur = () => {
@@ -30,6 +33,7 @@ function App() {
             // console.log(players);
         } 
        });
+    setAnimate(!animate);
     arr.push(player);
     setPlayers(arr);
   }
@@ -96,6 +100,7 @@ function App() {
 
   const handleSearchKeyStroke = () => {
     setPlayers([]);
+    setAnimate(!animate);
     let searchString = document.getElementById('search').value;
 
     if(searchString.length === 0){
@@ -126,7 +131,7 @@ return (
       { (players.length !== 0 ) && <SearchDisplay handleClick={ handleClick } displayvalue={ displayValue } players={ players }/>}
       <Search handleKeyUp={ handleSearchKeyStroke }  onBlur={ handleBlur }/>
       
-      { (players.length !== 0 ) && <Card player={ players[0] }/>}
+      { (players.length !== 0 ) && <Card animate={animate} player={ players[0] }/>}
        <button className='rand' onClick={ Randomize }>Randomize</button>
   </div>
 );
