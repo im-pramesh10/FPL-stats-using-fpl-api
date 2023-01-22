@@ -1,9 +1,9 @@
 import "./card.css"
 
-const card = ({ player })=>{
+const card = ({ animate, player })=>{
 
     return (
-        <div className="card-container">
+        <div key={ animate } className="card-container">
         <div className="card">
         <div className="card-front">
                 <div>Name: { player.name }</div>
