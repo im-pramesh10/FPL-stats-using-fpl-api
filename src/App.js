@@ -11,6 +11,7 @@ export default function App() {
     const [displayValue, setDisplayValue] = useState("none");
     const [random, setRandom]= useState(true);
     const [animate, setAnimate]=useState(true);
+    const [refresh,setRefresh]=useState(false);
     const [loading, error, data, fetchData ] = useFetchData("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F");
 
 
@@ -30,7 +31,7 @@ export default function App() {
         },180)
       }
     
-      const handleClick = (val) => {
+    const handleClick = (val) => {
         let arr = [];
         let player = players.find((prevPlayers)=> {
             if(prevPlayers.id === val){
@@ -42,7 +43,11 @@ export default function App() {
         setPlayers(arr);
       }
 
-    const Randomize = () => {
+    const refreshButton = () =>{
+        setRefresh(!refresh);
+    }
+
+    const randomize = () => {
         setRandom(!random);
         setAnimate(!animate);
       }
@@ -81,7 +86,7 @@ export default function App() {
 
     useEffect(()=>{
         fetchData();
-    },[]);
+    },[refresh]);
 
     useEffect(()=>{
         initializePlayers(data);
@@ -95,7 +100,7 @@ export default function App() {
         if(searchString.length === 0){
           setPlayers([]);
           setDisplayValue("none");
-          Randomize();
+          randomize();
         } else {
           setDisplayValue(null);
         }
@@ -113,8 +118,12 @@ export default function App() {
     
     
 
-    console.log(data);
-    console.log(error);
+    console.log(data)
+    // console.log(error)
+    if (error!==null)
+    {
+        <p>{ error }</p>
+    }
 
     if (loading) {
         return <p>Loading....</p>
@@ -131,7 +140,14 @@ export default function App() {
             <Search handleKeyUp={ handleSearchKeyStroke }  onBlur={ handleBlur }/>
             
             { (players.length !== 0 ) && <Card animate={animate} player={ players[0] }/>}
-             <button className='rand' onClick={ Randomize }>Randomize</button>
+            <div className='table-wrapper'>
+             <table className='table'>
+                <td><button className='btn' onClick={ randomize }>Randomize</button></td>
+                <td>
+                <button className='btn' onClick={ refreshButton }>Refresh Cache</button>
+                </td>
+             </table>
+             </div>
         </div>
         );
     }

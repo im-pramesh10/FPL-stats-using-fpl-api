@@ -32,7 +32,7 @@ body {
   margin: 0.3em;
 }
 
-.rand {
+.btn {
   background-color: #B00050;
   border: 0;
   border-radius: 4px;
@@ -43,7 +43,16 @@ body {
   transition: background-color 500ms ease-in-out;
 }
 
-.rand:hover {
+.btn:hover {
   background-color: #E3001C;
   cursor: pointer;
+}
+
+.table-wrapper {
+  width: 18em;
+}
+.table {
+  /* margin: 0 auto; */
+  width: 18em;
+  margin-left: 0.7em;
 }
