@@ -3,13 +3,19 @@ import './App.css';
 import Search from './components/search';
 import SearchDisplay from './components/searchDisplay';
 import Card from './components/card';
+import { useFetchData } from './useFetchData.js';
 
 function App() {
   const [players, setPlayers] = useState([]);
-  const [data, setData] = useState(null);
   const [displayValue, setDisplayValue] = useState("none");
   const [random, setRandom]= useState(true);
   const [animate, setAnimate]=useState(true);
+
+  const [ error, data, fetchData ] = useFetchData("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F");
+
+  useEffect(()=>{
+    fetchData();
+  },[random]);
 
 
   const Randomize = () => {
@@ -39,13 +45,6 @@ function App() {
   }
 
   const addToPlayers = (player, team) => {
-    // //check if player with the same id already exists in the prevPlayers array
-    // let playerExists = players.find((prevPlayer) => prevPlayer.id === player.id);
-    // if (playerExists) {
-    // console.log("Player already exists in the team.");
-    // return;
-    // }
-    // //If player does not already exist, add to players array
 
     setPlayers((prevPlayers) => [
       ...prevPlayers,
@@ -78,15 +77,19 @@ function App() {
     ]);
   }
 
-  useEffect(() => {
-    fetch("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F")
-    .then(response => response.json())
-    .then((data) => {
-      setData(data);
-      initializePlayers(data);
-    })
-    .catch(err => alert(err));
-  },[random]);
+  // useEffect(() => {
+  //   fetch("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F")
+  //   .then(response => response.json())
+  //   .then((data) => {
+  //     setData(data);
+  //     initializePlayers(data);
+  //   })
+  //   .catch(err => alert(err));
+  // },[random]);
+
+  
+
+  
 
   function initializePlayers(data) {
     setDisplayValue("none");
