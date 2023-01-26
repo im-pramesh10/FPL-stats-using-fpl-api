@@ -37,6 +37,7 @@ export default function App() {
             if(prevPlayers.id === val){
                return prevPlayers;
             } 
+            return [];
            });
         setAnimate(!animate);
         arr.push(player);
@@ -64,7 +65,7 @@ export default function App() {
             xA: parseFloat(player.expected_assists).toFixed(3),
             xGp90: parseFloat(player.expected_goals_per_90).toFixed(3),
             xAp90: parseFloat(player.expected_assists_per_90).toFixed(3),
-            xGIp90: parseFloat(player.expected_assists_per_90+player.expected_goals_per_90).toFixed(3),
+            xGIp90: parseFloat(player.expected_goal_involvements_per_90).toFixed(3),
             goals: player.goals_scored,
             assists: player.assists,
             selected_by: player.selected_by_percent,
@@ -142,9 +143,11 @@ export default function App() {
             { (players.length !== 0 ) && <Card animate={animate} player={ players[0] }/>}
             <div className='table-wrapper'>
              <table className='table'>
-                <td><button className='btn' onClick={ randomize }>Randomize</button></td>
                 <td>
-                <button className='btn' onClick={ refreshButton }>Refresh Cache</button>
+                  <button className='btn' onClick={ randomize }>Randomize</button>
+                </td>
+                <td>
+                  <button className='btn' onClick={ refreshButton }>Refresh Cache</button>
                 </td>
              </table>
              </div>
