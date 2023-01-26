@@ -37,7 +37,7 @@ export default function App() {
             if(prevPlayers.id === val){
                return prevPlayers;
             } 
-            return [];
+            return null;
            });
         setAnimate(!animate);
         arr.push(player);
@@ -54,35 +54,37 @@ export default function App() {
       }
       const addToPlayers = (player, team) => {
 
-        setPlayers((prevPlayers) => [
-          ...prevPlayers,
-          {
-            id: player.id,
-            name: player.web_name,
-            team: team,
-            status: player.status,
-            xG: parseFloat(player.expected_goals).toFixed(3),
-            xA: parseFloat(player.expected_assists).toFixed(3),
-            xGp90: parseFloat(player.expected_goals_per_90).toFixed(3),
-            xAp90: parseFloat(player.expected_assists_per_90).toFixed(3),
-            xGIp90: parseFloat(player.expected_goal_involvements_per_90).toFixed(3),
-            goals: player.goals_scored,
-            assists: player.assists,
-            selected_by: player.selected_by_percent,
-            minutes: player.minutes,
-            total_points: player.total_points,
-            clean_sheets: player.clean_sheets,
-            saves: player.saves,
-            goals_conceded: player.goals_conceded,
-            elements_type: player.element_type === 1 ? "GK" : 
-            player.element_type === 2 ? "DF" : 
-            player.element_type === 3 ? "MD" : 
-            player.element_type === 4 ? "FW" : "unknown",
-            starts: player.starts,
-            yellows: player.yellow_cards,
-            reds: player.red_cards,
-          }
-        ]);
+        setPlayers((prevPlayers) => {
+          return [
+            ...prevPlayers,
+            {
+              id: player.id,
+              name: player.web_name,
+              team: team,
+              status: player.status,
+              xG: parseFloat(player.expected_goals).toFixed(3),
+              xA: parseFloat(player.expected_assists).toFixed(3),
+              xGp90: parseFloat(player.expected_goals_per_90).toFixed(3),
+              xAp90: parseFloat(player.expected_assists_per_90).toFixed(3),
+              xGIp90: parseFloat(player.expected_goal_involvements_per_90).toFixed(3),
+              goals: player.goals_scored,
+              assists: player.assists,
+              selected_by: player.selected_by_percent,
+              minutes: player.minutes,
+              total_points: player.total_points,
+              clean_sheets: player.clean_sheets,
+              saves: player.saves,
+              goals_conceded: player.goals_conceded,
+              elements_type: player.element_type === 1 ? "GK" :
+                player.element_type === 2 ? "DF" :
+                  player.element_type === 3 ? "MD" :
+                    player.element_type === 4 ? "FW" : "unknown",
+              starts: player.starts,
+              yellows: player.yellow_cards,
+              reds: player.red_cards,
+            }
+          ];
+        });
       }
 
     useEffect(()=>{
@@ -119,7 +121,6 @@ export default function App() {
     
     
 
-    console.log(data)
     // console.log(error)
     if (error!==null)
     {
@@ -139,16 +140,19 @@ export default function App() {
             
             { (players.length !== 0 ) && <SearchDisplay handleClick={ handleClick } displayvalue={ displayValue } players={ players }/>}
             <Search handleKeyUp={ handleSearchKeyStroke }  onBlur={ handleBlur }/>
-            
             { (players.length !== 0 ) && <Card animate={animate} player={ players[0] }/>}
             <div className='table-wrapper'>
              <table className='table'>
-                <td>
-                  <button className='btn' onClick={ randomize }>Randomize</button>
-                </td>
-                <td>
-                  <button className='btn' onClick={ refreshButton }>Refresh Cache</button>
-                </td>
+             <thead>
+               <tr> 
+                    <th>
+                      <button className='btn' onClick={ randomize }>Randomize</button>
+                    </th>
+                    <th>
+                      <button className='btn' onClick={ refreshButton }>Refresh Cache</button>
+                    </th>
+                </tr>
+                </thead>
              </table>
              </div>
         </div>
