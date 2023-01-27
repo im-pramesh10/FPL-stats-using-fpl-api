@@ -4,6 +4,7 @@ import Search from './components/search';
 import SearchDisplay from './components/searchDisplay';
 import Card from './components/card';
 import { useFetchData } from './useFetchData.js';
+import BarChart from './components/BarChart';
 
 export default function App() {
 
@@ -13,7 +14,13 @@ export default function App() {
     const [animate, setAnimate]=useState(true);
     const [refresh,setRefresh]=useState(false);
     const [loading, error, data, fetchData ] = useFetchData("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F");
-
+    const chartData = {
+      labels: ["Haaland", "Salah", "Almiron"],
+      datasets: [{
+        label: "Most XGs of last 5 Gameweeks.",
+        data: [2.4,5.0,2.3],
+      }],
+    }
 
     const initializePlayers=(data) => {
         setDisplayValue("none");
@@ -140,6 +147,9 @@ export default function App() {
             
             { (players.length !== 0 ) && <SearchDisplay handleClick={ handleClick } displayvalue={ displayValue } players={ players }/>}
             <Search handleKeyUp={ handleSearchKeyStroke }  onBlur={ handleBlur }/>
+            <div className='flex-row'>
+              <div>
+
             { (players.length !== 0 ) && <Card animate={animate} player={ players[0] }/>}
             <div className='table-wrapper'>
              <table className='table'>
@@ -155,6 +165,12 @@ export default function App() {
                 </thead>
              </table>
              </div>
+          </div>
+        
+          <div className='fiveWeeksXG'>
+            <BarChart chartdata={chartData}/>
+          </div>
+          </div>
         </div>
         );
     }
