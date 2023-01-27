@@ -17,8 +17,13 @@ export default function App() {
     const chartData = {
       labels: ["Haaland", "Salah", "Almiron"],
       datasets: [{
-        label: "Most XGs of last 5 Gameweeks.",
-        data: [2.4,5.0,2.3],
+        label: "XGs of last 5 Gameweeks(Top 3 players)",
+        data: [2.4,10.0,8.3],
+        backgroundColor: [
+          'pink',
+        ],
+        borderColor: "black",
+        borderWidth: 2,
       }],
     }
 

@@ -56,7 +56,10 @@ body {
   margin-left: 0.7em;
 }
 .fiveWeeksXG {
-  margin-left: 6px;
+  margin: 10px;
+  background: rgba(255, 255, 255,0.8);
+  /* background: linear-gradient(50deg,red,purple); */
+  border-radius: 10px;
  } 
 .flex-row {
   display: flex;
