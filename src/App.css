@@ -20,7 +20,7 @@ body {
   color: white;
   width: 100vw;
   height: 40vh;
-  font-family: 'cursive';
+  font-family: cursive;
   font-weight: 600;
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 60%;
@@ -53,5 +53,21 @@ body {
 .table {
   /* margin: 0 auto; */
   width: 18em;
-  margin-left: 0.7em;
+  margin-left: 0.15em;
+}
+.fiveWeeksXG {
+  margin: 10px;
+  background: lavender;
+  /* background: linear-gradient(50deg,red,purple); */
+  border-radius: 10px;
+  border-style: groove;
+  border-color: black;
+  border-width: 5px;
+ } 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
