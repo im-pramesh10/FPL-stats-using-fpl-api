@@ -14,11 +14,19 @@ export default function App() {
     const [animate, setAnimate]=useState(true);
     const [refresh,setRefresh]=useState(false);
     const [loading, error, data, fetchData ] = useFetchData("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F");
-    const chartData = {
-      labels: ["Haaland", "Salah", "Almiron"],
+    const [chartDataLoading, chartError, fetchedChartData, fetchChartData]=useFetchData('https://im-pramesh10.github.io/top5XG-api/fiveGameweeksXG.json');
+    let chartData;
+
+    useEffect(()=>{
+      fetchChartData();
+  },[]);
+
+if (fetchedChartData!==null){
+    chartData = {
+      labels: fetchedChartData.map((obj)=>obj.name),
       datasets: [{
-        label: "XGs of last 5 Gameweeks(Top 3 players)",
-        data: [2.4,10.0,8.3],
+        label: "XGs of last 5 Gameweeks(Top 5 players)",
+        data: fetchedChartData.map((obj)=>obj.xgs),
         backgroundColor: [
           'pink',
         ],
@@ -26,6 +34,7 @@ export default function App() {
         borderWidth: 2,
       }],
     }
+}
 
     const initializePlayers=(data) => {
         setDisplayValue("none");
@@ -145,9 +154,9 @@ export default function App() {
         return (
             <div className="App">
             <div className="header-wrapper">
-              <h1 className="title">Welcome</h1>
-              <h1 className="title">To</h1>
-              <h1 className="title">FPL Statistics</h1>
+              {/* <h1 className="title">Welcome</h1>
+              <h1 className="title">To</h1> */}
+              <h1 className="title">FPL Stats</h1>
             </div>
             
             { (players.length !== 0 ) && <SearchDisplay handleClick={ handleClick } displayvalue={ displayValue } players={ players }/>}
@@ -173,7 +182,7 @@ export default function App() {
           </div>
         
           <div className='fiveWeeksXG'>
-            <BarChart chartdata={chartData}/>
+            { (fetchedChartData!==null) && <BarChart chartdata={chartData}/>}
           </div>
           </div>
         </div>

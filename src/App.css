@@ -53,13 +53,16 @@ body {
 .table {
   /* margin: 0 auto; */
   width: 18em;
-  margin-left: 0.7em;
+  margin-left: 0.15em;
 }
 .fiveWeeksXG {
   margin: 10px;
-  background: rgba(255, 255, 255,0.8);
+  background: lavender;
   /* background: linear-gradient(50deg,red,purple); */
   border-radius: 10px;
+  border-style: groove;
+  border-color: black;
+  border-width: 5px;
  } 
 .flex-row {
   display: flex;
