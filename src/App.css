@@ -71,3 +71,30 @@ body {
   align-items: center;
   justify-content: center;
 }
+.loading {
+  background: url('../img/football.png');
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 45vh;
+  border-radius: 50%;
+  animation: loadingAnim 2s linear infinite;
+}
+@keyframes loadingAnim {
+ 0%{
+  translate: 70px;
+  /* background-color: grey;  */
+  transform: rotate(360deg);
+ }
+ 50%{
+  translate: -70px;
+  /* background-color: skyblue; */
+  transform: rotate(-360deg);
+ }
+ 100%{
+  translate: 70px;
+  /* background-color: pink; */
+  transform: rotate(360deg);
+ }
+}

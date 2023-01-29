@@ -149,7 +149,16 @@ if (fetchedChartData!==null){
     }
 
     if (loading) {
-        return <p>Loading....</p>
+        return (
+                    <div className='App'>
+                        <div className="header-wrapper">
+                            {/* <h1 className="title">Welcome</h1>
+                            <h1 className="title">To</h1> */}
+                            <h1 className="title">FPL Stats</h1>
+                        </div>
+                        <div className='loading'></div>
+                    </div>
+        );
     } else {
         return (
             <div className="App">
