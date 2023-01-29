@@ -185,6 +185,7 @@ if (fetchedChartData!==null){
             { (fetchedChartData!==null) && <BarChart chartdata={chartData}/>}
           </div>
           </div>
+          <a className='github-link' href='https://github.com/im-pramesh10/FPL-stats-using-fpl-api' target={'_blank'} rel='noopener noreferrer'></a>
         </div>
         );
     }
