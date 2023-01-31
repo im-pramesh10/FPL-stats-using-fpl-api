@@ -14,7 +14,7 @@ export default function App() {
     const [animate, setAnimate]=useState(true);
     const [refresh,setRefresh]=useState(false);
     const [loading, error, data, fetchData ] = useFetchData("https://corsproxy.io/?https%3A%2F%2Ffantasy.premierleague.com%2Fapi%2Fbootstrap-static%2F");
-    const [chartDataLoading, chartError, fetchedChartData, fetchChartData]=useFetchData('https://im-pramesh10.github.io/top5XG-api/fiveGameweeksXG.json');
+    const [chartDataLoading, , fetchedChartData, fetchChartData]=useFetchData('https://im-pramesh10.github.io/top5XG-api/fiveGameweeksXG.json');
     let chartData;
 
     useEffect(()=>{
@@ -148,7 +148,7 @@ if (fetchedChartData!==null){
         <p>{ error }</p>
     }
 
-    if (loading) {
+    if (loading || chartDataLoading) {
         return (
                     <div className='App'>
                         <div className="header-wrapper">
@@ -194,7 +194,7 @@ if (fetchedChartData!==null){
             { (fetchedChartData!==null) && <BarChart chartdata={chartData}/>}
           </div>
           </div>
-          <a className='github-link' href='https://github.com/im-pramesh10/FPL-stats-using-fpl-api' target={'_blank'} rel='noopener noreferrer'></a>
+          <a className='github-link' href='https://github.com/im-pramesh10/FPL-stats-using-fpl-api' target={'_blank'} rel='noopener noreferrer'>github</a>
         </div>
         );
     }
