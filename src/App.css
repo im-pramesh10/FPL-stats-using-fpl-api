@@ -1,6 +1,7 @@
 body {
   background-color: rgb(55,0,60);
   color: white;
+  overflow-x: hidden;
 }
 
 .App {
@@ -19,7 +20,7 @@ body {
   background-size: cover;
   color: white;
   width: 100vw;
-  height: 40vh;
+  height: 38vh;
   font-family: cursive;
   font-weight: 600;
   border-bottom-left-radius: 100%;
