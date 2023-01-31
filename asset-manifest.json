@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FPL-stats-using-fpl-api/static/css/main.0d48ff30.css",
-    "main.js": "/FPL-stats-using-fpl-api/static/js/main.2897ffc0.js",
+    "main.css": "/FPL-stats-using-fpl-api/static/css/main.691a9fdc.css",
+    "main.js": "/FPL-stats-using-fpl-api/static/js/main.ae453f2a.js",
     "static/media/img1.jpg": "/FPL-stats-using-fpl-api/static/media/img1.bad262a44edb83327009.jpg",
     "static/media/football.png": "/FPL-stats-using-fpl-api/static/media/football.d6165baf4414d419555c.png",
     "index.html": "/FPL-stats-using-fpl-api/index.html",
-    "main.0d48ff30.css.map": "/FPL-stats-using-fpl-api/static/css/main.0d48ff30.css.map",
-    "main.2897ffc0.js.map": "/FPL-stats-using-fpl-api/static/js/main.2897ffc0.js.map"
+    "main.691a9fdc.css.map": "/FPL-stats-using-fpl-api/static/css/main.691a9fdc.css.map",
+    "main.ae453f2a.js.map": "/FPL-stats-using-fpl-api/static/js/main.ae453f2a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d48ff30.css",
-    "static/js/main.2897ffc0.js"
+    "static/css/main.691a9fdc.css",
+    "static/js/main.ae453f2a.js"
   ]
 }
