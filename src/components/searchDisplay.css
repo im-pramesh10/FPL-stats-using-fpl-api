@@ -12,7 +12,7 @@
     height: 80px;
     margin-bottom: 21vh;
     width: 30vw;
-    overflow: scroll;
+    overflow-y: scroll;
     border-radius: 15px 15px 4px 4px;
     display: flex;
     flex-direction: column-reverse;

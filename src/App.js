@@ -145,7 +145,7 @@ if (fetchedChartData!==null){
     // console.log(error)
     if (error!==null)
     {
-        <p>{ error }</p>
+        return <p>{ error }</p>
     }
 
     if (loading || chartDataLoading) {
