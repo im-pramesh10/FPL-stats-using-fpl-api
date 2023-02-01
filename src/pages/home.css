@@ -1,9 +1,3 @@
-body {
-  background-color: rgb(55,0,60);
-  color: white;
-  overflow-x: hidden;
-}
-
 .App {
   display: flex;
   flex-direction: column;
