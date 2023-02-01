@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-image: url("../img/img1.jpg");
+  background-image: url("/img/img1.jpg");
   background-size: cover;
   color: white;
   width: 100vw;
@@ -92,7 +92,7 @@ body {
  
 }
 .loading {
-  background: url('../img/football.png');
+  background: url('/img/football.png');
   background-size: cover;
   height: 2rem;
   width: 2rem;
