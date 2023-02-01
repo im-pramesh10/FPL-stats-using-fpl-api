@@ -103,6 +103,7 @@ if (fetchedChartData!==null){
               starts: player.starts,
               yellows: player.yellow_cards,
               reds: player.red_cards,
+              cost: player.now_cost,
             }
           ];
         });
@@ -194,7 +195,6 @@ if (fetchedChartData!==null){
             { (fetchedChartData!==null) && <BarChart chartdata={chartData}/>}
           </div>
           </div>
-          <a className='github-link' href='https://github.com/im-pramesh10/FPL-stats-using-fpl-api' target={'_blank'} rel='noopener noreferrer'>github</a>
         </div>
         );
     }
