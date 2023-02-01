@@ -10,9 +10,6 @@ export default function NavBar(){
             <div className='nav-item'>
                 <Link to="/team" className='link'>Team</Link>
             </div>
-            <div className='nav-item'>
-                <Link to="/chat" className='link'>Chat</Link>
-            </div>
         </div>
     );
 }

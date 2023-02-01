@@ -1,0 +1,16 @@
+.Team {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    position: absolute;
+    /* margin-top: 2em; */
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    /* align-content: center; */
+}
+.searchfield {
+    width: 30em;
+    text-align: center;
+}
