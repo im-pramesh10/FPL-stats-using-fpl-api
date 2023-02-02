@@ -1,0 +1,94 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("/img/img1.jpg");
+  background-size: cover;
+  color: white;
+  width: 100vw;
+  height: 38vh;
+  font-family: cursive;
+  font-weight: 600;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 60%;
+}
+
+.title {
+  font-size: 3em;
+  margin: 0.3em;
+}
+
+.btn {
+  background-color: #B00050;
+  border: 0;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  transition: background-color 500ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: #E3001C;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  width: 18em;
+}
+.table {
+  /* margin: 0 auto; */
+  width: 18em;
+  margin-left: 0.15em;
+}
+.fiveWeeksXG {
+  margin: 10px;
+  width: 350px;
+  height: 200px;
+  background: lavender;
+  /* background: linear-gradient(50deg,red,purple); */
+  border-radius: 10px;
+  border-style: groove;
+  border-color: black;
+  border-width: 5px;
+ } 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.loading {
+  background: url('/img/football.png');
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 45vh;
+  border-radius: 50%;
+  animation: loadingAnim 2s linear infinite;
+}
+@keyframes loadingAnim {
+ 0%{
+  translate: 70px;
+  transform: rotate(360deg);
+ }
+ 50%{
+  translate: -70px;
+  transform: rotate(-360deg);
+ }
+ 100%{
+  translate: 70px;
+  transform: rotate(360deg);
+ }
+}

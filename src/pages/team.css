@@ -1,0 +1,26 @@
+.Team {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    position: absolute;
+    /* margin-top: 2em; */
+    align-items: center;
+    flex-direction: column;
+    /* place-content: center; */
+    height: 100%;
+    width: 100%;
+    /* align-content: center; */
+}
+.searchfield {
+    width: 30em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.Manager-div{
+    background-color: peachpuff;
+    color: black;
+    width: 20em;
+    height: 25em;
+    padding: 0.5em;
+    border-radius: 1em;
+}

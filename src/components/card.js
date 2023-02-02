@@ -30,16 +30,16 @@ const card = ({ animate, player })=>{
                         <td>{player.assists}</td>
                     </tr>
                     <tr>
+                        <td style={{ backgroundColor: 'limegreen', borderRadius: '6px'}}>Cost</td>
+                        <td>{player.cost/10}</td>
+                    </tr>
+                    <tr>
                         <td>xG</td>
                         <td>{player.xG}</td>
                     </tr>
                     <tr>
                         <td>xA</td>
                         <td>{player.xA}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td>xGp90</td>

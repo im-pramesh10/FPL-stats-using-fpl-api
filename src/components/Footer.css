@@ -1,0 +1,26 @@
+.footer-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: fixed;
+    /* right: 50vw; */
+    /* left:45vw; */
+    bottom: 0;
+}
+.github-link {
+    background: url(https://github.com/fluidicon.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 8px;
+    font-size: 2px;
+    color: transparent;
+    /* transition: width 500ms ease-out;
+    transition: height 500ms ease-out; */
+  }
+  .github-link:hover {
+    width: 35px;
+    height: 35px;
+   
+  }

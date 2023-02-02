@@ -1,0 +1,23 @@
+.NavBar {
+    background-color:rgba(0, 0, 0,0.8);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    border-bottom: solid whitesmoke;
+    border-radius: 0 0 2em 2em;
+    z-index: 10;
+}
+.nav-item{
+    margin: 2px;
+    /* background-color: #37003C; */
+    width: 4em;
+    /* text-align: center; */
+}
+.link {
+    color:rgb(228, 220, 220);
+    text-decoration: none;
+    padding: 2px;
+}
