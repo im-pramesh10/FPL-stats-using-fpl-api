@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ErrorPopUp from '../components/ErrorPopUp';
+import { useFetchData } from '../hooks/useFetchData';
 import './team.css';
 
 export default function Team() {
@@ -7,8 +8,17 @@ export default function Team() {
     const [popUp,setPopUp] = useState('none');
     const teamID=localStorage.getItem('teamID');
     const [errormessage,setErrorMessage]=useState('');
+    const [loadingManager, errorManager, managerData, fetchManagerData]=useFetchData(`https://corsproxy.io/?`+  encodeURIComponent(`https://fantasy.premierleague.com/api/entry/${teamID}/`));
     const idRef = useRef();
     let renderElement;
+
+    useEffect(()=>{
+        if(teamID!==null){
+        fetchManagerData();
+        }
+    },[teamID])
+    console.log(managerData);
+
     const closeErrorPopUp=()=>{
         setPopUp('none');
     }
@@ -46,21 +56,26 @@ export default function Team() {
           onKeyUp={handleKeyUp}
           />
           <button className='btn' onClick={handleIdClick}>GO</button>
-    
-        <h2>Search By Name:</h2>
-        <input 
-            className='searchfield'
-            type='search'
-            placeholder="Search your team's name..."
-        />
-        <button className='btn'>Search</button>
+          <h2>How to Get your ID?</h2>
+          <ul>
+          <li>Login to your Fantasy Premier League account and go to your points section. Then the url should look like below: </li>
+          <p style={{color: 'limegreen'}}>https://fantasy.premierleague.com/entry/$id/event/21</p>
+          <li>Now copy the number in place of $id which your team's id.</li>
+          </ul>
     </>
     }
     else {
-       renderElement = <>
-       {teamID}
-            <button className='btn' onClick={changeID}>Change ID</button>
-       </>
+        if(loadingManager){
+            renderElement = <>
+            <div className='App'>
+                <div className='loading'></div>
+            </div></>
+        }
+        else{
+            renderElement = <>
+            {teamID}
+                    <button className='btn' onClick={changeID}>Change ID</button>
+       </>}
     }
     
     return (  
