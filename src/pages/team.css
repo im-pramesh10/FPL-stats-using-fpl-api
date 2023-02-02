@@ -16,3 +16,11 @@
     text-align: center;
     margin-bottom: 1em;
 }
+.Manager-div{
+    background-color: peachpuff;
+    color: black;
+    width: 20em;
+    height: 25em;
+    padding: 0.5em;
+    border-radius: 1em;
+}

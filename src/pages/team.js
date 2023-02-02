@@ -52,6 +52,7 @@ export default function Team() {
           ref={idRef}
           className='searchfield'
           type='number'
+          min={'0'}
           placeholder="Enter your team's ID..."
           onKeyUp={handleKeyUp}
           />
@@ -64,17 +65,23 @@ export default function Team() {
           </ul>
     </>
     }
-    else {
-        if(loadingManager){
+    else { //first else
+        if(loadingManager){ //nested
             renderElement = <>
             <div className='App'>
                 <div className='loading'></div>
             </div></>
         }
-        else{
+        else{ // main that runs when there is id and notloading
             renderElement = <>
-            {teamID}
-                    <button className='btn' onClick={changeID}>Change ID</button>
+                <div className='Manager-div'>
+                <section>Name: {managerData.player_first_name+' '+managerData.player_last_name}</section>
+                <section>Team Name: {managerData.name}</section>
+                <section>Total Points: {managerData.summary_overall_points}</section>
+                <section>Rank: {managerData.summary_overall_rank}</section>
+                <section>Country: {managerData.player_region_name}</section>
+                </div>
+                <button className='btn' style={{marginTop: '1em'}} onClick={changeID}>Change ID</button>
        </>}
     }
     
