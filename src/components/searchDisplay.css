@@ -8,15 +8,15 @@
 #search-display {
     background-color: rgba(255, 239, 213,0.8);
     color: black;
-    /* min-height: min-content; */
-    height: 80px;
-    margin-bottom: 21vh;
+    min-height: min-content;
+    max-height: 80px;
+    /* margin-bottom: 21vh; */
     width: 30vw;
     overflow-y: scroll;
     border-radius: 15px 15px 4px 4px;
     display: flex;
     flex-direction: column-reverse;
-    position: absolute;
+    position: relative;
     /* top: 38%; */
     /* bottom: 30.3%; */
     /* bottom: 100vw/100vh; */
