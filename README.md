@@ -5,7 +5,8 @@ A reactjs frontend to pull fpl stats from public fpl api calls
 ### Cloudfare
 https://fplstats.pages.dev/
 
-
+### Website demo GIF:
+![][def]
 ## FPL Rest API endpoints
 
 - https://fantasy.premierleague.com/api/bootstrap-static/ : events (gameweeks), teams, players, game settings, phases,
@@ -19,3 +20,6 @@ https://fplstats.pages.dev/
   data for a given entry (a fantasy team) for the past gameweeks of the season, plus past seasons.
 - [https://fantasy.premierleague.com/api/entry/{entry_id}/event/{event_id}/picks/](https://fantasy.premierleague.com/api/entry/6043795/event/3/picks/) :
   data of picks of a given fpl team for a given entry (gameweek)
+
+
+[def]: /gif/websitefpl.gif
