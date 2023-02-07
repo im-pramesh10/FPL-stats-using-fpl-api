@@ -59,9 +59,10 @@ export default function Team() {
           <button className='btn' onClick={handleIdClick}>GO</button>
           <h2>How to Get your ID?</h2>
           <ul>
-          <li>Login to your Fantasy Premier League account and go to your points section. Then the url should look like below: </li>
-          <p style={{color: 'limegreen'}}>https://fantasy.premierleague.com/entry/$id/event/21</p>
-          <li>Now copy the number in place of $id which your team's id.</li>
+          <li>To access your Fantasy Premier League points, you need to log in to your account and navigate to the "points" section.</li> 
+          <li>The URL of this page will be in the following format: </li>
+          <p style={{color: 'limegreen'}}>https://fantasy.premierleague.com/entry/'team-id'/event/21</p>
+          <li>Simply copy the number in place of 'team-id' in the URL which is your team's unique identifier.</li>
           </ul>
     </>
     }
